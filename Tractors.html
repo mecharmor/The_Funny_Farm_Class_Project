@@ -20,24 +20,93 @@
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
       crossorigin="anonymous">
 
+    <!-- My Custom Styles-->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
+
   <!--Navbar-->
-    <div id ="nav-wrapper">
-        <ul class="nav nav-pills" id="top-pills">
-          <li role="presentation">
-            <a>Funny Farm</a></li>
-          <li role="presentation">
-            <a href = "index.html">Home</a></li>
-          <li role="presentation">
-            <a href = "Watering.html">Watering</a></li>
-          <li role="presentation" class="active">
-            <a href = "Tractors.html">Tractors</a></li>
-          <li role="presentation">
-            <a href = "Employees.html">Employee</a></li>
-        </ul>
-    </div>
+  <nav class="navbar navbar-default navbar-fixed-top BoxShadow">
+  <div class="container">
+       <a class="navbar-brand"><img style="width:20px; height:20px;" src="img/Logo.png" alt="Logo"></a>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">HOME</a></li>
+      <li class="active"><a href="Tractors.html">Tractors</a></li>
+      <li><a href="Watering.html">Watering</a></li>
+      <li><a href="Employees.html">Employees</a></li>
+    </ul>
+  </div>
+</nav>
+<!--End Navbar-->
+
+<!--=========================================== The Beginning of the Tractor Modules======================================================-->
+
+<!--<div class="container-fluid" style="padding-top: 50px;">-->
+<div class="container-fluid" style="padding-top:100px; width:80%;">
+  <div class="row">
+
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <div class="thumbnail BoxShadow">
+          <img class="PicThumbnail" src="img/lamo_tractor.jpg" alt="Lamo Tractor">
+          <div class="caption">
+            <h3>Tractor A-1</h3>
+            <p>
+              <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#TractorModalA1"><span class="glyphicon glyphicon-scale"></span> Controller</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <div class="thumbnail BoxShadow">
+          <img class="PicThumbnail" src="img/tractor.jpg" alt="...">
+          <div class="caption">
+            <h3>Tractor A-2</h3>
+            <p>
+              <a class="btn btn-primary" role="button"><span class="glyphicon glyphicon-scale"></span> Controller</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <div class="thumbnail BoxShadow">
+          <img class="PicThumbnail" src="img/red_tractor.jpg" alt="...">
+          <div class="caption">
+            <h3>Tractor A-3</h3>
+            <p>
+              <a class="btn btn-primary" role="button"><span class="glyphicon glyphicon-scale"></span> Controller</a>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div><!--End Row-->
+</div><!-- End container div-->
+
+<!-- ==================================== End Tractors Modules/ Start Modal Pieces ===============-->
+
+<!-- Modal Tractor 1 -->
+ <div class="modal fade" id="TractorModalA1" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Tractor A-1 Control Panel</h4>
+       </div>
+       <div class="modal-body">
+         <p>Control the things</p>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+
+   </div>
+
 </body>
 
 </html>

@@ -1,0 +1,20 @@
+body{
+  background: #f2f2f2;
+}
+.PicThumbnail{
+  height: 200px;
+  width: auto;
+}
+.BoxShadow{
+  box-shadow: 3px 3px 5px #999999;
+}
+.BlockTable{
+
+  height:50px;
+  width: 50px;
+
+}
+
+.text-center {
+   text-align:center
+}

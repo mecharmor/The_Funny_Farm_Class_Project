@@ -21,35 +21,93 @@
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
 
-<style>
-body{
-  background: #999999;
-}
-</style>
+  <!-- My Custom Styles -->
+  <link href="styles.css" rel="stylesheet" type="text/css">
 
+  <!--Load watering.js-->
+    <script src="watering.js"></script>
 
 </head>
 
 <body>
 
   <!--Navbar-->
-    <div id ="nav-wrapper">
-        <ul class="nav nav-pills" id="top-pills">
-          <li role="presentation">
-          <a>Funny Farm</a>
-          </li>
-          <li role="presentation">
-            <a href = "index.html">Home</a>
-          </li>
-          <li role="presentation" class="active">
-            <a href = "Watering.html">Watering</a></li>
-          <li role="presentation">
-            <a href = "Tractors.html">Tractors</a></li>
-            <li role="presentation">
-              <a href = "Employees.html">Employee</a></li>
-        </ul>
-    </div>
+  <nav class="navbar navbar-default navbar-fixed-top BoxShadow">
+  <div class="container">
+       <a class="navbar-brand"><img style="width:20px; height:20px;" src="img/Logo_water.png" alt="Logo"></a>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="Tractors.html">Tractors</a></li>
+      <li class="active"><a href="Watering.html">Watering</a></li>
+      <li><a href="Employees.html">Employees</a></li>
+    </ul>
+  </div>
+</nav>
+<!--End Navbar-->
 
+<!-- ========================================= Grid Table Start ========================-->
+<div class="container" style=" padding-top:8%; width:80%;">
+  <div class="row">
+      <div class="col-lg-4 text-center">
+          <img src="img/map/A-1.png" alt="A-1">
+          <!--Progress Bar-->
+          <div class="progress">
+            <div id="A-1_Progress" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            </div>
+          </div>
+          <!--A-1 Button-->
+            <a id="A-1_Button" class="btn btn-primary" role="button" data-toggle="modal" data-target="#A-1_Watering"><span class="glyphicon glyphicon-cog"></span> A-1 Control's</a>
+      </div>
+      <div class="col-lg-4 text-center">
+        <img src="img/map/A-2.png" alt="A-2">
+      </div>
+      <div class="col-lg-4 text-center">
+        <img src="img/map/A-3.png" alt="A-3">
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-lg-4 text-center">
+        <img src="img/map/B-1.png" alt="B-1">
+      </div>
+      <div class="col-lg-4 text-center">
+      <img src="img/map/B-2.png" alt="B-2">
+      </div>
+      <div class="col-lg-4 text-center">
+        <img src="img/map/B-3.png" alt="B-3">
+      </div>
+
+  </div>
+
+</div><!-- End Container -->
+
+<!--============================= Modal for use ===============================-->
+
+
+<!-- Modal Sprinklers A-1 -->
+ <div class="modal fade" id="A-1_Watering" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <p class="modal-title" id="A-1_Header">00:00:00 XX</p>
+       </div>
+       <div class="modal-body">
+           <div class="panel panel-primary">
+             <div class="panel-heading">Sprnklers on/off Override</div>
+             <div class="panel-body"><input type="checkbox" id="A-1_SprinklerCheckbox">
+               <img id="A-1_SprinklerPicture" style="height:104px; width:auto;" src="img/reggie/Sprinkler_off.png" alt="Server Tractor">
+             </div>
+           </div><!--End Panel-->
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+
+   </div>
 
 
 </body>
