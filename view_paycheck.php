@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <head>
 <title>Funny Farm</title>
+<!--Load Bootstrap-->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
 </head>
 <h1>The Funny Farm</h1>
 <?php
@@ -28,10 +34,10 @@ $dbConnection = mysqli_connect('localhost',$user, $pass, $db) or die("Unable to 
 
 //CHECK IF FORM HAS BEEN SUBMITTED
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	
+
 	if ($_POST['sure'] == 'Yes'){
 		//DELETE THE RECORD
-		
+
 		//MAKE THE QUERY
 		$q = "DELETE FROM employees WHERE ssn=$id LIMIT 1;";
 		$r = @mysqli_query($dbConnection, $q);
@@ -46,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		echo '<p>The employee was not be deleted.</p>';
 	}
 }
-else{  //SHOW THE FORM 
-	
+else{  //SHOW THE FORM
+
 	$q = "SELECT ssn, first_name, last_name, street, city, state, zip, phone, salary, job,
 	date1, time1, time2, time3, time4, time5, time6, time7
 	FROM employees
@@ -56,7 +62,7 @@ else{  //SHOW THE FORM
 
 	if (mysqli_num_rows($r) == 1){
 	$row = mysqli_fetch_array ($r, MYSQLI_NUM);
-	
+
 	// create the form
 	echo '<form action="view_paycheck.php" method="post">
 	<fieldset><legend><b>Emloyee Last Paycheck</b></legend>
@@ -90,7 +96,7 @@ else{  //SHOW THE FORM
 
 mysqli_close($dbConnection);
 echo '<div class="home">';
-echo '<a href="farm_front_page.php">Home</a>';
+echo '<a href="farm_front_page.php" type="button" class="btn btn-primary" >Home</a>';
 echo '</div>';
 ?>
 </html>

@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <head>
 <title>The Funny Farm</title>
+<!--Load Bootstrap-->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
 </head>
 
 <h1>The Funny Farm</h1>
@@ -12,7 +18,7 @@ $pass = '';
 $db = 'farm';
 
 $dbConnection = mysqli_connect('localhost',$user, $pass, $db) or die("Unable to connect to the database");
-	
+
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$ssn = mysqli_real_escape_string($dbConnection, trim($_POST['emp_id']));
@@ -25,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$phone = mysqli_real_escape_string($dbConnection, trim($_POST['phone']));
 		$salary = mysqli_real_escape_string($dbConnection, trim($_POST['salary']));
 		$job = mysqli_real_escape_string($dbConnection, trim($_POST['job']));
-		
+
 		// check for unique SSN
 		$q = "SELECT ssn FROM employees WHERE ssn = '$ssn'";
 		$r = @mysqli_query($dbConnection, $q);
@@ -46,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		}
 	}
 
-	?>	
+	?>
 
 <form action="add_employee.php" id="myform" method="post">
 <fieldset><legend><b>New Employee</b></legend>
@@ -74,7 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 <br/>
 </fieldset>
 <div class="home">
-<a href="farm_front_page.php">Home</a>
+<!--<a href="farm_front_page.php">Home</a>-->
+<a href="farm_front_page.php" type="button" class="btn btn-primary" >Home</a>
 </div>
 </form>
 
@@ -112,7 +119,7 @@ function validateFirst(){
 	try{
 		if (firstInput.value == ""){
 			throw "Please enter a first name.";
-		} 
+		}
 	firstInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -132,7 +139,7 @@ function validateLast(){
 	try{
 		if (lastInput.value == ""){
 			throw "Please enter a last name.";
-		} 
+		}
 	lastInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -152,7 +159,7 @@ function validateStreet(){
 	try{
 		if (streetInput.value == ""){
 			throw "Please enter a street address.";
-		} 
+		}
 	streetInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -172,7 +179,7 @@ function validateCity(){
 	try{
 		if (cityInput.value == ""){
 			throw "Please enter a city.";
-		} 
+		}
 	cityInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -192,7 +199,7 @@ function validateState(){
 	try{
 		if (stateInput.value == ""){
 			throw "Please enter a state.";
-		} 
+		}
 	stateInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -278,7 +285,7 @@ function validateJob(){
 	try{
 		if (jobInput.value == ""){
 			throw "Please enter a job title.";
-		} 
+		}
 	jobInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -318,7 +325,7 @@ function createEventListeners(){
 	} else if (first_name.attachEvent){
 		first_name.attachEvent("onchange", validateFirst);
 		last_name.attachEvent("onchange", validateLast);
-		emp_id.attachEvent("onchange", validateEmpolyee);	
+		emp_id.attachEvent("onchange", validateEmpolyee);
 		street.attachEvent("change", validateStreet);
 		city.attachEvent("change", validateCity);
 		state.attachEvent("change", validateState);

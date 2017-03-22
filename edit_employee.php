@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <head>
 <title>Funny Farm</title>
+<!--Load Bootstrap-->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
 </head>
 
 <h1>The Funny Farm</h1>
@@ -28,10 +34,10 @@ $dbConnection = mysqli_connect('localhost',$user, $pass, $db) or die("Unable to 
 
 //CHECK IF FORM HAS BEEN SUBMITTED
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	
+
 	if ($_POST['sure'] == 'Yes'){
 		//DELETE THE RECORD
-		
+
 		//GET INFO
 		$ssn = mysqli_real_escape_string($dbConnection, trim($_POST['emp_id']));
 		$first_name = mysqli_real_escape_string($dbConnection, trim($_POST['first_name']));
@@ -62,8 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		echo '<p>The employee was not be updated.</p>';
 	}
 }
-else{  //SHOW THE FORM 
-	
+else{  //SHOW THE FORM
+
 	$q = "SELECT ssn, first_name, last_name, street, city, state, zip, phone, salary, job
 	FROM employees
 	WHERE ssn = $id";
@@ -71,7 +77,7 @@ else{  //SHOW THE FORM
 
 	if (mysqli_num_rows($r) == 1){
 	$row = mysqli_fetch_array ($r, MYSQLI_NUM);
-	
+
 	// create the form
 	echo '<form action="edit_employee.php" id="myform" method="post">
 	<fieldset><legend><b>Edit Employee</b></legend>
@@ -110,7 +116,7 @@ else{  //SHOW THE FORM
 
 mysqli_close($dbConnection);
 echo '<div class="home">';
-echo '<a href="farm_front_page.php">Home</a>';
+echo '<a href="farm_front_page.php" type="button" class="btn btn-primary" >Back</a>';
 echo '</div>';
 ?>
 
@@ -148,7 +154,7 @@ function validateFirst(){
 	try{
 		if (firstInput.value == ""){
 			throw "Please enter a first name.";
-		} 
+		}
 	firstInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -168,7 +174,7 @@ function validateLast(){
 	try{
 		if (lastInput.value == ""){
 			throw "Please enter a last name.";
-		} 
+		}
 	lastInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -188,7 +194,7 @@ function validateStreet(){
 	try{
 		if (streetInput.value == ""){
 			throw "Please enter a street address.";
-		} 
+		}
 	streetInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -208,7 +214,7 @@ function validateCity(){
 	try{
 		if (cityInput.value == ""){
 			throw "Please enter a city.";
-		} 
+		}
 	cityInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -228,7 +234,7 @@ function validateState(){
 	try{
 		if (stateInput.value == ""){
 			throw "Please enter a state.";
-		} 
+		}
 	stateInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -314,7 +320,7 @@ function validateJob(){
 	try{
 		if (jobInput.value == ""){
 			throw "Please enter a job title.";
-		} 
+		}
 	jobInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";
@@ -354,7 +360,7 @@ function createEventListeners(){
 	} else if (first_name.attachEvent){
 		first_name.attachEvent("onchange", validateFirst);
 		last_name.attachEvent("onchange", validateLast);
-		emp_id.attachEvent("onchange", validateEmpolyee);	
+		emp_id.attachEvent("onchange", validateEmpolyee);
 		street.attachEvent("change", validateStreet);
 		city.attachEvent("change", validateCity);
 		state.attachEvent("change", validateState);

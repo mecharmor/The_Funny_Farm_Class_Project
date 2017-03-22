@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <head>
 <title>The Funny Farm</title>
+<!--Load Bootstrap-->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
 </head>
 
 <h1>The Funny Farm</h1>
@@ -17,7 +23,7 @@ $dbConnection = mysqli_connect('localhost',$user, $pass, $db) or die("Unable to 
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$search = $_REQUEST['employee'];
-	
+
 	// Define the query:
 	$q = "SELECT ssn, first_name, last_name, street, city, state, zip, phone, salary, job
 	FROM employees
@@ -75,8 +81,8 @@ mysqli_close($dbConnection);
 	} else {
 		echo '<p><h3><u>Sorry we cannot find any matching search results</u></h3></p>';
 		echo '<div class="home">';
-		echo '<a href="search_employee.php">Back</a>';
-		echo '<a href="farm_front_page.php">Home</a>';
+		echo '<a href="farm_front_page.php" type="button" class="btn btn-primary" >Home</a>';
+		echo '<a href="search_employee.php" type="button" class="btn btn-primary" >Back</a>';
 		echo '</div>';
 	}
 
@@ -105,7 +111,7 @@ function validateSearch(){
 	try{
 		if (searchInput.value == ""){
 			throw "Please enter a value in the search field";
-		} 
+		}
 	searchInput.style.background = "";
 	errorDiv.style.display = "none";
 	errorDiv.innerHTML = "";

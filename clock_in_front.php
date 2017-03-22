@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <head>
 <title>The Funny Farm</title>
+<!--Load Bootstrap-->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
 </head>
 
 <h1>The Funny Farm</h1>
@@ -125,7 +131,7 @@ mysqli_close($dbConnection);
 
 // make pagination
 if ($pages > 1) {
-	
+
 	echo '<br /><div class="pagination"><p align="center">';
 	$current_page = ($start/$display) + 1;
 	if ($current_page !=1) {
@@ -147,7 +153,7 @@ if ($pages > 1) {
 
 echo '</fieldset>';
 echo '<div class="home">';
-echo '<a href="farm_front_page.php">Home</a>';
+echo '<a href="farm_front_page.php" type="button" class="btn btn-primary" >Back</a>';
 echo '</div>';
 ?>
 

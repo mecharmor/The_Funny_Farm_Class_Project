@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <head>
 <title>Funny Farm</title>
+<!--Load Bootstrap-->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
 </head>
 
 <h1>The Funny Farm</h1>
@@ -28,9 +34,9 @@ $dbConnection = mysqli_connect('localhost',$user, $pass, $db) or die("Unable to 
 
 //CHECK IF FORM HAS BEEN SUBMITTED
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	
+
 	if ($_POST['sure'] == 'Yes'){
-		
+
 		//GET INFO
 		$ssn = mysqli_real_escape_string($dbConnection, trim($_POST['emp_id']));
 		$first_name = mysqli_real_escape_string($dbConnection, trim($_POST['first_name']));
@@ -69,8 +75,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		echo '<p>The employee timecard was not be updated.</p>';
 	}
 }
-else{  //SHOW THE FORM 
-	
+else{  //SHOW THE FORM
+
 	$q = "SELECT ssn, first_name, last_name, street, city, state, zip, phone, salary, job
 	FROM employees
 	WHERE ssn = $id";
@@ -78,7 +84,7 @@ else{  //SHOW THE FORM
 
 	if (mysqli_num_rows($r) == 1){
 	$row = mysqli_fetch_array ($r, MYSQLI_NUM);
-	
+
 	// create the form
 	echo '<form action="clock_in.php" id="myform" method="post">
 	<fieldset><legend><b>Confirm Timecard Details</b></legend>
@@ -92,10 +98,10 @@ else{  //SHOW THE FORM
 	<p><b>Phone:  </b> <input type="text" readonly="readonly" id="phone" name="phone" size="20" value=' . $row[7] . '></p>
 	<p><b>Salary  :</b> <input type="text" readonly="readonly" id="salary" name="salary" size="20" value=' . $row[8] . '></p>
 	<p><b>Job:  </b> <input type="text" readonly="readonly" id="job" name="job" size="20" value= ' . $row[9] . '></p>
-	
+
 	<p><b>Payperiod Begin Date: </b/><input type="date" id="date1" name="date1"/></p>
-	
-	
+
+
 	<p><b>Hours Worked: </b>
 	Sunday: <input type="text" id="time1" name="time1" size="5" value="0""/>
 	Monday: <input type="text" id="time2" name="time2" size="5" value="0"/>
@@ -122,7 +128,7 @@ else{  //SHOW THE FORM
 
 mysqli_close($dbConnection);
 echo '<div class="home">';
-echo '<a href="farm_front_page.php">Home</a>';
+echo '<a href="farm_front_page.php" type="button" class="btn btn-primary" >Home</a>';
 echo '</div>';
 ?>
 <script>
