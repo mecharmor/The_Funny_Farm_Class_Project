@@ -29,36 +29,49 @@ if ($("#A-1_ButtonText").text() == " Turn On") {
   //Turning Sprinklers off
   $("#A-1_Button").removeClass("btn btn-danger").addClass("btn btn-primary");
   $("#A-1_ButtonText").text(" Turn On");
+    //Button off
   ProgressBar("off");
 }
 
 });
 
 function ProgressBar(temp) {
-
+//Button is turned on
 if (temp == "on") {
 
-  var myVar = setInterval(myTimer, 100);
+  //Sprinklers on Pic
+  $('#A-1_img').attr('src', 'img/map/watering/A-1_watering.png');
+  //Start that glorious loop
+  var myVar = setInterval(myTimer, 500);
 
   function myTimer() {
+      //once progress bar reaches 100%
       if (counter >= 100) {
         $("#A-1_Progress").css("width", counter + '%');
         //clear once timer ends
         counter = 0;
         clearInterval(myVar);
           $("#A-1_ButtonText").text(" Reset");
+          //Sprinklers off Pic
+          $('#A-1_img').attr('src', 'img/map/A-1.png');
       }
       else {
+        //Fill to 100%
         $("#A-1_Progress").css("width", counter + '%');
+        //Progress counter to 100
         counter++;
        }
      // document.getElementById("A-1_Header").innerHTML = d.toLocaleTimeString();
   }
 
 }
+//if button is turned off
 else if (temp == "off") {
+  //kill loop
   clearInterval(myVar);
+  //reset
   counter = 0;
+  //set bar to 0%
   $("#A-1_Progress").css("width", counter);
 }
 
