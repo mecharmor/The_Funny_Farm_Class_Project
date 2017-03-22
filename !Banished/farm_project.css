@@ -1,0 +1,106 @@
+body {
+font-size: 10 pt;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+color: black;
+line-height: 14pt;
+padding-left: 5pt;
+padding-right: 5pt;
+padding-top: 5pt;
+}
+
+/* headers*/
+h1 {
+font-size: 14pt;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #1E9C22;
+font-weight: bold;
+line-height: 20pt;
+text-align: center;
+}
+
+p{
+	text-indent: 50px;
+}
+
+h2 {
+font-size: 12pt;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+color: #1E9C22;
+font-weight: bold;
+line-height: 20pt;
+padding-left: 15pt;
+text-indent: 400px;
+}
+/*buttons*/
+input[type=submit]{
+    width: 125px;
+    right: 20px;
+    bottom: 20px;
+    background: #fff
+	color: black;
+    font-size: 10pt;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    height: 30px;
+    text-align: center;
+	border: 2px solid #1E9C22;
+}
+
+
+img {
+padding: 3pt;
+float: right;
+}
+
+a {
+text-decoration: none;
+}
+
+
+form {
+	width: 686px;
+	margin: 0 auto;
+	padding-bottom: 15px;
+	align: center;
+	border-width: 0px;
+}
+
+fieldset {
+	border-left:0px;
+	border-right:0px;
+
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	
+	
+}
+
+th, td {
+	padding: 15px;
+	text-align: left;
+}
+
+a:hover, a:active {
+	font-size: 125%;
+}
+
+
+/* unvisited line*/
+a:link {
+	color:black;
+}
+
+/* visited link*/
+a:visited {
+	color:#1E9C22;
+}
+
+
+footer {
+font-size: 9pt;
+font-style: italic;
+line-height: 12pt;
+text-align: center;
+padding-top: 30 pt;
+}
