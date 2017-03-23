@@ -23,6 +23,9 @@
     <!-- My Custom Styles-->
     <link href="styles.css" rel="stylesheet" type="text/css">
 
+    <!--Load tractors.js-->
+    <script src="tractors.js"></script>
+
 </head>
 
 <body>
@@ -53,7 +56,7 @@
           <div class="caption">
             <h3>Tractor A-1</h3>
             <p>
-              <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#TractorModalA1"><span class="glyphicon glyphicon-scale"></span> Controller</a>
+              <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#TractorModalA1"><span class="glyphicon glyphicon-scale"></span></a>
             </p>
           </div>
         </div>
@@ -65,7 +68,7 @@
           <div class="caption">
             <h3>Tractor A-2</h3>
             <p>
-              <a class="btn btn-primary" role="button"><span class="glyphicon glyphicon-scale"></span> Controller</a>
+              <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#TractorModalA2"><span class="glyphicon glyphicon-scale"></span></a>
             </p>
           </div>
         </div>
@@ -77,7 +80,7 @@
           <div class="caption">
             <h3>Tractor A-3</h3>
             <p>
-              <a class="btn btn-primary" role="button"><span class="glyphicon glyphicon-scale"></span> Controller</a>
+            <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#TractorModalA3"><span class="glyphicon glyphicon-scale"></span></a>
             </p>
           </div>
         </div>
@@ -85,7 +88,7 @@
   </div><!--End Row-->
 </div><!-- End container div-->
 
-<!-- ==================================== End Tractors Modules/ Start Modal Pieces ===============-->
+<!-- ==================================== A-1 Tractor Modal =======================-->
 
 <!-- Modal Tractor 1 -->
  <div class="modal fade" id="TractorModalA1" role="dialog">
@@ -95,17 +98,115 @@
      <div class="modal-content">
        <div class="modal-header">
          <button type="button" class="close" data-dismiss="modal">&times;</button>
-         <h4 class="modal-title">Tractor A-1 Control Panel</h4>
+         <h4 class="modal-title">Tractor A-1 Info Panel</h4>
        </div>
        <div class="modal-body">
-         <p>Control the things</p>
-       </div>
+           <ul class="list-group">
+              <li class="list-group-item">Brand: TYM</li>
+              <li class="list-group-item">Model: T234 HST</li>
+              <li class="list-group-item">Engine: 24.4 HP Mitsubishi</li>
+              <li class="list-group-item">Transmission: Hydrostatic</li>
+              <li class="list-group-item">Lift Capacity: 1,534 lb</li>
+              <li class="list-group-item"><table>
+                <tr>
+                    <td><h4 style="margin-right:50px;">Current Fuel Level: </h4></td>
+                    <td>
+                        <!--Fuel Level Bar -->
+                        <div class="progress progress-bar-vertical BoxShadow">
+                            <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 75%;">
+                              <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr></table></li>
+          </ul>
+        </div><!--body end-->
        <div class="modal-footer">
          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
        </div>
      </div>
-
    </div>
+</div>
+
+<!--  ===================================== A-2 Tractor Modal ================================================ -->
+
+ <div class="modal fade" id="TractorModalA2" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Tractor A-2 Info Panel</h4>
+       </div>
+       <div class="modal-body">
+           <ul class="list-group">
+              <li class="list-group-item">Brand: Yamaha</li>
+              <li class="list-group-item">Model: M289</li>
+              <li class="list-group-item">Engine: 105.5 HP Honda Diesel</li>
+              <li class="list-group-item">Transmission: Automatic</li>
+              <li class="list-group-item">Pull Capacity: 3968 lb</li>
+              <li class="list-group-item"><table>
+                <tr>
+                    <td><h4 style="margin-right:50px;">Current Fuel Level: </h4></td>
+                    <td>
+                        <!--Fuel Level Bar -->
+                        <div class="progress progress-bar-vertical BoxShadow">
+                            <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 12%;">
+                              <span class="sr-only">12% Complete</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr></table></li>
+          </ul>
+        </div><!--body end-->
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+   </div>
+</div>
+
+<!-- ======================================  A-3 Tractor Modal =============================== -->
+
+
+ <div class="modal fade" id="TractorModalA3" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Tractor A-3 Info Panel</h4>
+       </div>
+       <div class="modal-body">
+           <ul class="list-group">
+              <li class="list-group-item">Brand: TYM</li>
+              <li class="list-group-item">Model: T394 HST</li>
+              <li class="list-group-item">Engine: 37.4 HP Yanmar Diesel</li>
+              <li class="list-group-item">Transmission: Hydrostatic</li>
+              <li class="list-group-item">Hitch Lift Capacity: 2,646 lb</li>
+              <li class="list-group-item"><table>
+                <tr>
+                    <td><h4 style="margin-right:50px;">Current Fuel Level: </h4></td>
+                    <td>
+                        <!--Fuel Level Bar -->
+                        <div class="progress progress-bar-vertical BoxShadow">
+                            <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 98%;">
+                              <span class="sr-only">98% Complete</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr></table></li>
+          </ul>
+        </div><!--body end-->
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+   </div>
+</div>
+
 
 </body>
 
