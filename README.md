@@ -1,2 +1,4 @@
-# The_Funny_Farm_Comp250
-super funny
+# The Funny Farm
+
+
+## PHP Website for a farm that has service management capabilities
